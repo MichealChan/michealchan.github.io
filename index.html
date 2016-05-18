@@ -261,6 +261,297 @@
             
               
                 
+                <a class="post-title-link" href="/2016/05/18/oracle基础语法/" itemprop="url">
+                  oracle基础语法-朱涛
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-18T11:42:30+08:00" content="2016-05-18">
+              2016-05-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/18/oracle基础语法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/18/oracle基础语法/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/05/18/oracle基础语法/" class="leancloud_visitors" data-flag-title="oracle基础语法-朱涛">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Oracle基础语法"><a href="#Oracle基础语法" class="headerlink" title="Oracle基础语法"></a>Oracle基础语法</h1><blockquote>
+<p>1、表的新建和删除</p>
+<p>2、基础数据查询</p>
+<p>3、数据新增</p>
+</blockquote>
+<h3 id="表的新建和删除"><a href="#表的新建和删除" class="headerlink" title="表的新建和删除"></a>表的新建和删除</h3><h4 id="新建表"><a href="#新建表" class="headerlink" title="新建表"></a>新建表</h4><p>方法一：使用sql语句新建表；</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> 表名</span><br><span class="line">(</span><br><span class="line">字段 类型</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>根据不同字段的需要设置不同类型（int、varchar、date…）</p>
+<p>方法二：使用pl sql可视化新建表；</p>
+<p>首先需要找到plsql中右侧“对象”菜单，找到tables文件夹，右键点击“新建”；</p>
+<p><img src="http://o6xuqclac.bkt.clouddn.com/plsql%E6%96%B0%E5%BB%BA%E8%A1%A8%E8%8F%9C%E5%8D%95%E9%80%89%E6%8B%A9.png" alt=""></p>
+<p>填写表名和字段等信息</p>
+<p><img src="http://o6xuqclac.bkt.clouddn.com/plsql%E6%96%B0%E5%BB%BA%E8%A1%A8%E8%8F%9C%E5%8D%95%E5%A1%AB%E5%86%99%E8%A1%A8%E5%90%8D.png" alt=""></p>
+<p><img src="http://o6xuqclac.bkt.clouddn.com/plsql%E6%96%B0%E5%BB%BA%E5%AD%97%E6%AE%B5.png" alt=""></p>
+<p>点击“应用”按钮完成新建</p>
+<h4 id="删除表"><a href="#删除表" class="headerlink" title="删除表"></a>删除表</h4><p>方法一：使用sql语句新删除表；<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> 表名</span><br></pre></td></tr></table></figure></p>
+<p>方法二：使用pl sql可视化删除表；</p>
+<p><img src="http://o6xuqclac.bkt.clouddn.com/%E5%88%A0%E9%99%A4%E8%A1%A8.png" alt=""></p>
+<h3 id="基础数据查询"><a href="#基础数据查询" class="headerlink" title="基础数据查询"></a>基础数据查询</h3><h4 id="普通查询"><a href="#普通查询" class="headerlink" title="普通查询"></a>普通查询</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> 表名</span><br></pre></td></tr></table></figure>
+<h4 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> 表名 <span class="keyword">where</span> 字段=<span class="string">'条件'</span></span><br></pre></td></tr></table></figure>
+<h4 id="范围查询"><a href="#范围查询" class="headerlink" title="范围查询"></a>范围查询</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 字段<span class="number">1</span> <span class="keyword">from</span> 表名 <span class="keyword">where</span> 字段<span class="number">1</span> <span class="keyword">between</span> <span class="number">1000</span> <span class="keyword">and</span> <span class="number">2000</span></span><br></pre></td></tr></table></figure>
+<h4 id="查询排序"><a href="#查询排序" class="headerlink" title="查询排序"></a>查询排序</h4><p>倒序<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> *</span><br><span class="line">  <span class="keyword">from</span> 表名 t</span><br><span class="line"> <span class="keyword">where</span> t.字段 <span class="keyword">between</span> <span class="number">2000</span> <span class="keyword">and</span> <span class="number">5000</span></span><br><span class="line"> <span class="keyword">order</span> <span class="keyword">by</span> 字段 <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure></p>
+<p>正序<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> *</span><br><span class="line">  <span class="keyword">from</span> table1 t</span><br><span class="line"> <span class="keyword">where</span> t.字段 <span class="keyword">between</span> <span class="number">2000</span> <span class="keyword">and</span> <span class="number">5000</span></span><br><span class="line"> <span class="keyword">order</span> <span class="keyword">by</span> 字段 <span class="keyword">asc</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="数据新增"><a href="#数据新增" class="headerlink" title="数据新增"></a>数据新增</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> 表名 (字段<span class="number">1</span>,字段二,字段三)</span><br><span class="line"><span class="keyword">values</span> (<span class="string">'值1'</span>,<span class="string">'值2'</span>,值<span class="number">3</span><span class="string">');</span></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/16/oracle配置/" itemprop="url">
+                  oracle配置-朱涛
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-16T16:46:12+08:00" content="2016-05-16">
+              2016-05-16
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/16/oracle配置/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/16/oracle配置/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/05/16/oracle配置/" class="leancloud_visitors" data-flag-title="oracle配置-朱涛">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>#Oracle 11g在win8 64位上配置PLSql</p>
+<h3 id="插件下载"><a href="#插件下载" class="headerlink" title="插件下载"></a>插件下载</h3><blockquote>
+<p>1、到oracle官网中下载instantclient_11_2文件</p>
+<p>2、下方为csdn中的下载地址，也可以到官网中下。</p>
+</blockquote>
+<p><a href="http://download.csdn.net/detail/jinwanmeng/5014787" target="_blank" rel="external">下载instantclient_11_2</a></p>
+<h3 id="配置步骤"><a href="#配置步骤" class="headerlink" title="配置步骤"></a>配置步骤</h3><h4 id="进入解压缩文件夹，将解压文件拷贝到oracle的目录；"><a href="#进入解压缩文件夹，将解压文件拷贝到oracle的目录；" class="headerlink" title="进入解压缩文件夹，将解压文件拷贝到oracle的目录；"></a>进入解压缩文件夹，将解压文件拷贝到oracle的目录；</h4><h4 id="打开plsql软件，不需要输入用户名和密码，直接关掉登录窗口进入主界面；"><a href="#打开plsql软件，不需要输入用户名和密码，直接关掉登录窗口进入主界面；" class="headerlink" title="打开plsql软件，不需要输入用户名和密码，直接关掉登录窗口进入主界面；"></a>打开plsql软件，不需要输入用户名和密码，直接关掉登录窗口进入主界面；</h4><h4 id="找到菜单栏-工具-首选项-链接，主目录、库根据个人存放位置进行填写，库可自动检测后填写；"><a href="#找到菜单栏-工具-首选项-链接，主目录、库根据个人存放位置进行填写，库可自动检测后填写；" class="headerlink" title="找到菜单栏-工具-首选项-链接，主目录、库根据个人存放位置进行填写，库可自动检测后填写；"></a>找到菜单栏-工具-首选项-链接，主目录、库根据个人存放位置进行填写，库可自动检测后填写；</h4><p><img src="http://o6xuqclac.bkt.clouddn.com/%E4%BF%AE%E6%94%B9plsql%E5%AD%98%E5%82%A8%E8%B7%AF%E5%BE%84.png" alt=""></p>
+<h4 id="填写完成后保存配置并关闭plsql；"><a href="#填写完成后保存配置并关闭plsql；" class="headerlink" title="填写完成后保存配置并关闭plsql；"></a>填写完成后保存配置并关闭plsql；</h4><h4 id="进入我的电脑-属性-高级系统设置-环境变量-添加一个环境变量：变量名TNS-ADMIN；变量值F-oraclezhwproduct11-2-0dbhome-2NETWORKADMIN"><a href="#进入我的电脑-属性-高级系统设置-环境变量-添加一个环境变量：变量名TNS-ADMIN；变量值F-oraclezhwproduct11-2-0dbhome-2NETWORKADMIN" class="headerlink" title="进入我的电脑-属性-高级系统设置-环境变量-添加一个环境变量：变量名TNS_ADMIN；变量值F:oraclezhwproduct11.2.0dbhome_2NETWORKADMIN"></a>进入我的电脑-属性-高级系统设置-环境变量-添加一个环境变量：变量名TNS_ADMIN；变量值F:oraclezhwproduct11.2.0dbhome_2NETWORKADMIN</h4><p><img src="http://o6xuqclac.bkt.clouddn.com/%28S~2$Q%5BUPP_D4BMGCTXBLMX.png" alt=""></p>
+<h4 id="重新打开plsql，登录成功！"><a href="#重新打开plsql，登录成功！" class="headerlink" title="重新打开plsql，登录成功！"></a>重新打开plsql，登录成功！</h4><p><img src="" alt=""></p>
+<h3 id="plsql查询中文乱码配置"><a href="#plsql查询中文乱码配置" class="headerlink" title="plsql查询中文乱码配置"></a>plsql查询中文乱码配置</h3><h4 id="打开plsql，新建查询语句select-from-V-NLS-PARAMETERS，查看第一行value值是否为简体中文"><a href="#打开plsql，新建查询语句select-from-V-NLS-PARAMETERS，查看第一行value值是否为简体中文" class="headerlink" title="打开plsql，新建查询语句select * from V$NLS_PARAMETERS，查看第一行value值是否为简体中文"></a>打开plsql，新建查询语句select * from V$NLS_PARAMETERS，查看第一行value值是否为简体中文</h4><p><img src="http://o6xuqclac.bkt.clouddn.com/%E4%B9%B1%E7%A0%811.png" alt=""></p>
+<h4 id="进入我的电脑-属性-高级系统设置-环境变量-添加一个环境变量：变量名NLS-LANG；变量值SIMPLIFIED-CHINESE-CHINA-ZHS16GBK"><a href="#进入我的电脑-属性-高级系统设置-环境变量-添加一个环境变量：变量名NLS-LANG；变量值SIMPLIFIED-CHINESE-CHINA-ZHS16GBK" class="headerlink" title="进入我的电脑-属性-高级系统设置-环境变量-添加一个环境变量：变量名NLS_LANG；变量值SIMPLIFIED CHINESE_CHINA.ZHS16GBK"></a>进入我的电脑-属性-高级系统设置-环境变量-添加一个环境变量：变量名NLS_LANG；变量值SIMPLIFIED CHINESE_CHINA.ZHS16GBK</h4><p><img src="http://o6xuqclac.bkt.clouddn.com/%28S~2$Q%5BUPP_D4BMGCTXBLMX.png" alt=""></p>
+<h4 id="保存以上新建变量，重新打开plsql就能正常显示中文；"><a href="#保存以上新建变量，重新打开plsql就能正常显示中文；" class="headerlink" title="保存以上新建变量，重新打开plsql就能正常显示中文；"></a>保存以上新建变量，重新打开plsql就能正常显示中文；</h4>
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/05/13/scala入门1/" itemprop="url">
                   scala入门(1)-陈子扬
                 </a>
@@ -541,9 +832,7 @@
       
         
           
-            <h1 id="Markedown的基本语法"><a href="#Markedown的基本语法" class="headerlink" title="Markedown的基本语法"></a>Markedown的基本语法</h1><blockquote>
-<p>Markedown是一门简单的标记性语言，通过简单的标记语法，它可以使普通的文本内容具有一定的格式。Markedown的语法全部由一些符号组成。</p>
-</blockquote>
+            <h1 id="Markedown的基本语法"><a href="#Markedown的基本语法" class="headerlink" title="Markedown的基本语法"></a>Markedown的基本语法</h1><p>Markedown是一门简单的标记性语言，通过简单的标记语法，它可以使普通的文本内容具有一定的格式。Markedown的语法全部由一些符号组成。</p>
 <p>###标题设置###<br>标题的实现方式有两种</p>
 <ul>
 <li>在文字的开头加 # 号。（# 的数量代表标题的级别，一个#代表一级标题总共六级）</li>
@@ -861,8 +1150,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/05/04/关于oracle11g安装/" itemprop="url">
-                  Oracle 11g安装-朱涛
+                <a class="post-title-link" href="/2016/05/04/oracle安装/" itemprop="url">
+                  oracle安装-朱涛
                 </a>
               
             
@@ -905,8 +1194,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/04/关于oracle11g安装/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/04/关于oracle11g安装/" itemprop="commentsCount"></span>
+                <a href="/2016/05/04/oracle安装/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/04/oracle安装/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -916,7 +1205,7 @@
 
           
           
-             <span id="/2016/05/04/关于oracle11g安装/" class="leancloud_visitors" data-flag-title="Oracle 11g安装-朱涛">
+             <span id="/2016/05/04/oracle安装/" class="leancloud_visitors" data-flag-title="oracle安装-朱涛">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1325,7 +1614,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

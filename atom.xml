@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://michealchan.github.io/"/>
-  <updated>2016-05-13T12:33:23.000Z</updated>
+  <updated>2016-05-18T07:05:37.000Z</updated>
   <id>http://michealchan.github.io/</id>
   
   <author>
@@ -14,6 +14,93 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>oracle基础语法-朱涛</title>
+    <link href="http://michealchan.github.io/2016/05/18/oracle%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"/>
+    <id>http://michealchan.github.io/2016/05/18/oracle基础语法/</id>
+    <published>2016-05-18T03:42:30.000Z</published>
+    <updated>2016-05-18T07:05:37.000Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;Oracle基础语法&quot;&gt;&lt;a href=&quot;#Oracle基础语法&quot; class=&quot;headerlink&quot; title=&quot;Oracle基础语法&quot;&gt;&lt;/a&gt;Oracle基础语法&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;1、表的新建和删除&lt;/p&gt;
+&lt;p&gt;2、基础数据查询&lt;/p&gt;
+&lt;p&gt;3、数据新增&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;表的新建和删除&quot;&gt;&lt;a href=&quot;#表的新建和删除&quot; class=&quot;headerlink&quot; title=&quot;表的新建和删除&quot;&gt;&lt;/a&gt;表的新建和删除&lt;/h3&gt;&lt;h4 id=&quot;新建表&quot;&gt;&lt;a href=&quot;#新建表&quot; class=&quot;headerlink&quot; title=&quot;新建表&quot;&gt;&lt;/a&gt;新建表&lt;/h4&gt;&lt;p&gt;方法一：使用sql语句新建表；&lt;/p&gt;
+&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;table&lt;/span&gt; 表名&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;(&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;字段 类型&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;根据不同字段的需要设置不同类型（int、varchar、date…）&lt;/p&gt;
+&lt;p&gt;方法二：使用pl sql可视化新建表；&lt;/p&gt;
+&lt;p&gt;首先需要找到plsql中右侧“对象”菜单，找到tables文件夹，右键点击“新建”；&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://o6xuqclac.bkt.clouddn.com/plsql%E6%96%B0%E5%BB%BA%E8%A1%A8%E8%8F%9C%E5%8D%95%E9%80%89%E6%8B%A9.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;填写表名和字段等信息&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://o6xuqclac.bkt.clouddn.com/plsql%E6%96%B0%E5%BB%BA%E8%A1%A8%E8%8F%9C%E5%8D%95%E5%A1%AB%E5%86%99%E8%A1%A8%E5%90%8D.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://o6xuqclac.bkt.clouddn.com/plsql%E6%96%B0%E5%BB%BA%E5%AD%97%E6%AE%B5.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;点击“应用”按钮完成新建&lt;/p&gt;
+&lt;h4 id=&quot;删除表&quot;&gt;&lt;a href=&quot;#删除表&quot; class=&quot;headerlink&quot; title=&quot;删除表&quot;&gt;&lt;/a&gt;删除表&lt;/h4&gt;&lt;p&gt;方法一：使用sql语句新删除表；&lt;br&gt;&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;drop&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;table&lt;/span&gt; 表名&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;方法二：使用pl sql可视化删除表；&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://o6xuqclac.bkt.clouddn.com/%E5%88%A0%E9%99%A4%E8%A1%A8.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;基础数据查询&quot;&gt;&lt;a href=&quot;#基础数据查询&quot; class=&quot;headerlink&quot; title=&quot;基础数据查询&quot;&gt;&lt;/a&gt;基础数据查询&lt;/h3&gt;&lt;h4 id=&quot;普通查询&quot;&gt;&lt;a href=&quot;#普通查询&quot; class=&quot;headerlink&quot; title=&quot;普通查询&quot;&gt;&lt;/a&gt;普通查询&lt;/h4&gt;&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;select&lt;/span&gt; * &lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; 表名&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;条件查询&quot;&gt;&lt;a href=&quot;#条件查询&quot; class=&quot;headerlink&quot; title=&quot;条件查询&quot;&gt;&lt;/a&gt;条件查询&lt;/h4&gt;&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;select&lt;/span&gt; * &lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; 表名 &lt;span class=&quot;keyword&quot;&gt;where&lt;/span&gt; 字段=&lt;span class=&quot;string&quot;&gt;&#39;条件&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;范围查询&quot;&gt;&lt;a href=&quot;#范围查询&quot; class=&quot;headerlink&quot; title=&quot;范围查询&quot;&gt;&lt;/a&gt;范围查询&lt;/h4&gt;&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;select&lt;/span&gt; 字段&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; 表名 &lt;span class=&quot;keyword&quot;&gt;where&lt;/span&gt; 字段&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;between&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;1000&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2000&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;查询排序&quot;&gt;&lt;a href=&quot;#查询排序&quot; class=&quot;headerlink&quot; title=&quot;查询排序&quot;&gt;&lt;/a&gt;查询排序&lt;/h4&gt;&lt;p&gt;倒序&lt;br&gt;&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;select&lt;/span&gt; *&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; 表名 t&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;span class=&quot;keyword&quot;&gt;where&lt;/span&gt; t.字段 &lt;span class=&quot;keyword&quot;&gt;between&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2000&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;5000&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;span class=&quot;keyword&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;by&lt;/span&gt; 字段 &lt;span class=&quot;keyword&quot;&gt;desc&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;正序&lt;br&gt;&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;select&lt;/span&gt; *&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; table1 t&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;span class=&quot;keyword&quot;&gt;where&lt;/span&gt; t.字段 &lt;span class=&quot;keyword&quot;&gt;between&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2000&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;5000&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;span class=&quot;keyword&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;by&lt;/span&gt; 字段 &lt;span class=&quot;keyword&quot;&gt;asc&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;数据新增&quot;&gt;&lt;a href=&quot;#数据新增&quot; class=&quot;headerlink&quot; title=&quot;数据新增&quot;&gt;&lt;/a&gt;数据新增&lt;/h3&gt;&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;into&lt;/span&gt; 表名 (字段&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,字段二,字段三)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;values&lt;/span&gt; (&lt;span class=&quot;string&quot;&gt;&#39;值1&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;值2&#39;&lt;/span&gt;,值&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&#39;);&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Oracle基础语法&quot;&gt;&lt;a href=&quot;#Oracle基础语法&quot; class=&quot;headerlink&quot; title=&quot;Oracle基础语法&quot;&gt;&lt;/a&gt;Oracle基础语法&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;1、表的新建和删除&lt;/p&gt;
+&lt;p&gt;2、基础数据查询
+    
+    </summary>
+    
+      <category term="数据库" scheme="http://michealchan.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="oracle" scheme="http://michealchan.github.io/tags/oracle/"/>
+    
+      <category term="朱涛" scheme="http://michealchan.github.io/tags/%E6%9C%B1%E6%B6%9B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>oracle配置-朱涛</title>
+    <link href="http://michealchan.github.io/2016/05/16/oracle%E9%85%8D%E7%BD%AE/"/>
+    <id>http://michealchan.github.io/2016/05/16/oracle配置/</id>
+    <published>2016-05-16T08:46:12.000Z</published>
+    <updated>2016-05-18T07:04:13.000Z</updated>
+    
+    <content type="html">&lt;p&gt;#Oracle 11g在win8 64位上配置PLSql&lt;/p&gt;
+&lt;h3 id=&quot;插件下载&quot;&gt;&lt;a href=&quot;#插件下载&quot; class=&quot;headerlink&quot; title=&quot;插件下载&quot;&gt;&lt;/a&gt;插件下载&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;1、到oracle官网中下载instantclient_11_2文件&lt;/p&gt;
+&lt;p&gt;2、下方为csdn中的下载地址，也可以到官网中下。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://download.csdn.net/detail/jinwanmeng/5014787&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;下载instantclient_11_2&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;配置步骤&quot;&gt;&lt;a href=&quot;#配置步骤&quot; class=&quot;headerlink&quot; title=&quot;配置步骤&quot;&gt;&lt;/a&gt;配置步骤&lt;/h3&gt;&lt;h4 id=&quot;进入解压缩文件夹，将解压文件拷贝到oracle的目录；&quot;&gt;&lt;a href=&quot;#进入解压缩文件夹，将解压文件拷贝到oracle的目录；&quot; class=&quot;headerlink&quot; title=&quot;进入解压缩文件夹，将解压文件拷贝到oracle的目录；&quot;&gt;&lt;/a&gt;进入解压缩文件夹，将解压文件拷贝到oracle的目录；&lt;/h4&gt;&lt;h4 id=&quot;打开plsql软件，不需要输入用户名和密码，直接关掉登录窗口进入主界面；&quot;&gt;&lt;a href=&quot;#打开plsql软件，不需要输入用户名和密码，直接关掉登录窗口进入主界面；&quot; class=&quot;headerlink&quot; title=&quot;打开plsql软件，不需要输入用户名和密码，直接关掉登录窗口进入主界面；&quot;&gt;&lt;/a&gt;打开plsql软件，不需要输入用户名和密码，直接关掉登录窗口进入主界面；&lt;/h4&gt;&lt;h4 id=&quot;找到菜单栏-工具-首选项-链接，主目录、库根据个人存放位置进行填写，库可自动检测后填写；&quot;&gt;&lt;a href=&quot;#找到菜单栏-工具-首选项-链接，主目录、库根据个人存放位置进行填写，库可自动检测后填写；&quot; class=&quot;headerlink&quot; title=&quot;找到菜单栏-工具-首选项-链接，主目录、库根据个人存放位置进行填写，库可自动检测后填写；&quot;&gt;&lt;/a&gt;找到菜单栏-工具-首选项-链接，主目录、库根据个人存放位置进行填写，库可自动检测后填写；&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;http://o6xuqclac.bkt.clouddn.com/%E4%BF%AE%E6%94%B9plsql%E5%AD%98%E5%82%A8%E8%B7%AF%E5%BE%84.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h4 id=&quot;填写完成后保存配置并关闭plsql；&quot;&gt;&lt;a href=&quot;#填写完成后保存配置并关闭plsql；&quot; class=&quot;headerlink&quot; title=&quot;填写完成后保存配置并关闭plsql；&quot;&gt;&lt;/a&gt;填写完成后保存配置并关闭plsql；&lt;/h4&gt;&lt;h4 id=&quot;进入我的电脑-属性-高级系统设置-环境变量-添加一个环境变量：变量名TNS-ADMIN；变量值F-oraclezhwproduct11-2-0dbhome-2NETWORKADMIN&quot;&gt;&lt;a href=&quot;#进入我的电脑-属性-高级系统设置-环境变量-添加一个环境变量：变量名TNS-ADMIN；变量值F-oraclezhwproduct11-2-0dbhome-2NETWORKADMIN&quot; class=&quot;headerlink&quot; title=&quot;进入我的电脑-属性-高级系统设置-环境变量-添加一个环境变量：变量名TNS_ADMIN；变量值F:oraclezhwproduct11.2.0dbhome_2NETWORKADMIN&quot;&gt;&lt;/a&gt;进入我的电脑-属性-高级系统设置-环境变量-添加一个环境变量：变量名TNS_ADMIN；变量值F:oraclezhwproduct11.2.0dbhome_2NETWORKADMIN&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;http://o6xuqclac.bkt.clouddn.com/%28S~2$Q%5BUPP_D4BMGCTXBLMX.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h4 id=&quot;重新打开plsql，登录成功！&quot;&gt;&lt;a href=&quot;#重新打开plsql，登录成功！&quot; class=&quot;headerlink&quot; title=&quot;重新打开plsql，登录成功！&quot;&gt;&lt;/a&gt;重新打开plsql，登录成功！&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;plsql查询中文乱码配置&quot;&gt;&lt;a href=&quot;#plsql查询中文乱码配置&quot; class=&quot;headerlink&quot; title=&quot;plsql查询中文乱码配置&quot;&gt;&lt;/a&gt;plsql查询中文乱码配置&lt;/h3&gt;&lt;h4 id=&quot;打开plsql，新建查询语句select-from-V-NLS-PARAMETERS，查看第一行value值是否为简体中文&quot;&gt;&lt;a href=&quot;#打开plsql，新建查询语句select-from-V-NLS-PARAMETERS，查看第一行value值是否为简体中文&quot; class=&quot;headerlink&quot; title=&quot;打开plsql，新建查询语句select * from V$NLS_PARAMETERS，查看第一行value值是否为简体中文&quot;&gt;&lt;/a&gt;打开plsql，新建查询语句select * from V$NLS_PARAMETERS，查看第一行value值是否为简体中文&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;http://o6xuqclac.bkt.clouddn.com/%E4%B9%B1%E7%A0%811.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h4 id=&quot;进入我的电脑-属性-高级系统设置-环境变量-添加一个环境变量：变量名NLS-LANG；变量值SIMPLIFIED-CHINESE-CHINA-ZHS16GBK&quot;&gt;&lt;a href=&quot;#进入我的电脑-属性-高级系统设置-环境变量-添加一个环境变量：变量名NLS-LANG；变量值SIMPLIFIED-CHINESE-CHINA-ZHS16GBK&quot; class=&quot;headerlink&quot; title=&quot;进入我的电脑-属性-高级系统设置-环境变量-添加一个环境变量：变量名NLS_LANG；变量值SIMPLIFIED CHINESE_CHINA.ZHS16GBK&quot;&gt;&lt;/a&gt;进入我的电脑-属性-高级系统设置-环境变量-添加一个环境变量：变量名NLS_LANG；变量值SIMPLIFIED CHINESE_CHINA.ZHS16GBK&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;http://o6xuqclac.bkt.clouddn.com/%28S~2$Q%5BUPP_D4BMGCTXBLMX.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h4 id=&quot;保存以上新建变量，重新打开plsql就能正常显示中文；&quot;&gt;&lt;a href=&quot;#保存以上新建变量，重新打开plsql就能正常显示中文；&quot; class=&quot;headerlink&quot; title=&quot;保存以上新建变量，重新打开plsql就能正常显示中文；&quot;&gt;&lt;/a&gt;保存以上新建变量，重新打开plsql就能正常显示中文；&lt;/h4&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;#Oracle 11g在win8 64位上配置PLSql&lt;/p&gt;
+&lt;h3 id=&quot;插件下载&quot;&gt;&lt;a href=&quot;#插件下载&quot; class=&quot;headerlink&quot; title=&quot;插件下载&quot;&gt;&lt;/a&gt;插件下载&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;1、到oracle官网中下
+    
+    </summary>
+    
+      <category term="数据库" scheme="http://michealchan.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="oracle" scheme="http://michealchan.github.io/tags/oracle/"/>
+    
+      <category term="朱涛" scheme="http://michealchan.github.io/tags/%E6%9C%B1%E6%B6%9B/"/>
+    
+  </entry>
   
   <entry>
     <title>scala入门(1)-陈子扬</title>
@@ -118,11 +205,9 @@
     <link href="http://michealchan.github.io/2016/05/13/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"/>
     <id>http://michealchan.github.io/2016/05/13/Markdown基本语法/</id>
     <published>2016-05-13T07:32:22.000Z</published>
-    <updated>2016-05-13T12:35:43.000Z</updated>
+    <updated>2016-05-18T07:02:09.000Z</updated>
     
-    <content type="html">&lt;h1 id=&quot;Markedown的基本语法&quot;&gt;&lt;a href=&quot;#Markedown的基本语法&quot; class=&quot;headerlink&quot; title=&quot;Markedown的基本语法&quot;&gt;&lt;/a&gt;Markedown的基本语法&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;Markedown是一门简单的标记性语言，通过简单的标记语法，它可以使普通的文本内容具有一定的格式。Markedown的语法全部由一些符号组成。&lt;/p&gt;
-&lt;/blockquote&gt;
+    <content type="html">&lt;h1 id=&quot;Markedown的基本语法&quot;&gt;&lt;a href=&quot;#Markedown的基本语法&quot; class=&quot;headerlink&quot; title=&quot;Markedown的基本语法&quot;&gt;&lt;/a&gt;Markedown的基本语法&lt;/h1&gt;&lt;p&gt;Markedown是一门简单的标记性语言，通过简单的标记语法，它可以使普通的文本内容具有一定的格式。Markedown的语法全部由一些符号组成。&lt;/p&gt;
 &lt;p&gt;###标题设置###&lt;br&gt;标题的实现方式有两种&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;在文字的开头加 # 号。（# 的数量代表标题的级别，一个#代表一级标题总共六级）&lt;/li&gt;
@@ -233,8 +318,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Markedown的基本语法&quot;&gt;&lt;a href=&quot;#Markedown的基本语法&quot; class=&quot;headerlink&quot; title=&quot;Markedown的基本语法&quot;&gt;&lt;/a&gt;Markedown的基本语法&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;Markedown
+      &lt;h1 id=&quot;Markedown的基本语法&quot;&gt;&lt;a href=&quot;#Markedown的基本语法&quot; class=&quot;headerlink&quot; title=&quot;Markedown的基本语法&quot;&gt;&lt;/a&gt;Markedown的基本语法&lt;/h1&gt;&lt;p&gt;Markedown是一门简单的标记性语言，通
     
     </summary>
     
@@ -306,11 +390,11 @@
   </entry>
   
   <entry>
-    <title>Oracle 11g安装-朱涛</title>
-    <link href="http://michealchan.github.io/2016/05/04/%E5%85%B3%E4%BA%8Eoracle11g%E5%AE%89%E8%A3%85/"/>
-    <id>http://michealchan.github.io/2016/05/04/关于oracle11g安装/</id>
+    <title>oracle安装-朱涛</title>
+    <link href="http://michealchan.github.io/2016/05/04/oracle%E5%AE%89%E8%A3%85/"/>
+    <id>http://michealchan.github.io/2016/05/04/oracle安装/</id>
     <published>2016-05-04T07:42:30.000Z</published>
-    <updated>2016-05-10T09:49:59.000Z</updated>
+    <updated>2016-05-18T07:03:16.000Z</updated>
     
     <content type="html">&lt;p&gt;#Oracle 11g安装&lt;/p&gt;
 &lt;h3 id=&quot;关于-ORACLE-下载&quot;&gt;&lt;a href=&quot;#关于-ORACLE-下载&quot; class=&quot;headerlink&quot; title=&quot;关于 ORACLE 下载&quot;&gt;&lt;/a&gt;关于 ORACLE 下载&lt;/h3&gt;&lt;blockquote&gt;

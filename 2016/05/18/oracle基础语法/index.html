@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="gitHub,陈骁," />
+  <meta name="keywords" content="oracle,朱涛," />
 
 
 
@@ -82,70 +82,54 @@
 
 
 
-<meta name="description" content="GitHub教程(1)
-对于从事IT行业的人员来说，GitHub很多人应该都听说过这个名字，但是可能也有一些人不是很清楚Github到底是什么？
-代码管理工具有哪些？
-SVN
-git
-mercurial
+<meta name="description" content="Oracle基础语法
+1、表的新建和删除
+2、基础数据查询
+3、数据新增
 
-以上三个都是代码管理工具，我们平常用到的都是图形化操作界面的客户端比如
+表的新建和删除新建表方法一：使用sql语句新建表；
+1234create table 表名(字段 类型)
+根据不同字段的需要设置不同类型（int、varchar、date…）
+方法二：使用pl sql可视化新建表；
+首先需要找到plsql中右侧“对象”菜单，找到tables文件夹，右键点击“新建”；
 
-SVN的客户端：
-TortoiseSVN
-SmartSVN
-Subcommander
-RapidSVN
-QSvn
-
-
-g">
+填写表名和字段等信息">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GitHub教程(1)-陈骁">
-<meta property="og:url" content="http://michealchan.github.io/2016/04/29/GitHub教程-1/index.html">
+<meta property="og:title" content="oracle基础语法-朱涛">
+<meta property="og:url" content="http://michealchan.github.io/2016/05/18/oracle基础语法/index.html">
 <meta property="og:site_name" content="融易通-华兴项目组-博客">
-<meta property="og:description" content="GitHub教程(1)
-对于从事IT行业的人员来说，GitHub很多人应该都听说过这个名字，但是可能也有一些人不是很清楚Github到底是什么？
-代码管理工具有哪些？
-SVN
-git
-mercurial
+<meta property="og:description" content="Oracle基础语法
+1、表的新建和删除
+2、基础数据查询
+3、数据新增
 
-以上三个都是代码管理工具，我们平常用到的都是图形化操作界面的客户端比如
+表的新建和删除新建表方法一：使用sql语句新建表；
+1234create table 表名(字段 类型)
+根据不同字段的需要设置不同类型（int、varchar、date…）
+方法二：使用pl sql可视化新建表；
+首先需要找到plsql中右侧“对象”菜单，找到tables文件夹，右键点击“新建”；
 
-SVN的客户端：
-TortoiseSVN
-SmartSVN
-Subcommander
-RapidSVN
-QSvn
-
-
-g">
-<meta property="og:image" content="http://7xth9f.com2.z0.glb.clouddn.com/2016-04-28/Snip20160428_3.png">
-<meta property="og:image" content="http://7xth9f.com2.z0.glb.clouddn.com/2016-04-28/Snip20160428_2.png">
-<meta property="og:updated_time" content="2016-05-10T09:07:41.000Z">
+填写表名和字段等信息">
+<meta property="og:image" content="http://o6xuqclac.bkt.clouddn.com/plsql%E6%96%B0%E5%BB%BA%E8%A1%A8%E8%8F%9C%E5%8D%95%E9%80%89%E6%8B%A9.png">
+<meta property="og:image" content="http://o6xuqclac.bkt.clouddn.com/plsql%E6%96%B0%E5%BB%BA%E8%A1%A8%E8%8F%9C%E5%8D%95%E5%A1%AB%E5%86%99%E8%A1%A8%E5%90%8D.png">
+<meta property="og:image" content="http://o6xuqclac.bkt.clouddn.com/plsql%E6%96%B0%E5%BB%BA%E5%AD%97%E6%AE%B5.png">
+<meta property="og:image" content="http://o6xuqclac.bkt.clouddn.com/%E5%88%A0%E9%99%A4%E8%A1%A8.png">
+<meta property="og:updated_time" content="2016-05-18T07:05:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GitHub教程(1)-陈骁">
-<meta name="twitter:description" content="GitHub教程(1)
-对于从事IT行业的人员来说，GitHub很多人应该都听说过这个名字，但是可能也有一些人不是很清楚Github到底是什么？
-代码管理工具有哪些？
-SVN
-git
-mercurial
+<meta name="twitter:title" content="oracle基础语法-朱涛">
+<meta name="twitter:description" content="Oracle基础语法
+1、表的新建和删除
+2、基础数据查询
+3、数据新增
 
-以上三个都是代码管理工具，我们平常用到的都是图形化操作界面的客户端比如
+表的新建和删除新建表方法一：使用sql语句新建表；
+1234create table 表名(字段 类型)
+根据不同字段的需要设置不同类型（int、varchar、date…）
+方法二：使用pl sql可视化新建表；
+首先需要找到plsql中右侧“对象”菜单，找到tables文件夹，右键点击“新建”；
 
-SVN的客户端：
-TortoiseSVN
-SmartSVN
-Subcommander
-RapidSVN
-QSvn
-
-
-g">
-<meta name="twitter:image" content="http://7xth9f.com2.z0.glb.clouddn.com/2016-04-28/Snip20160428_3.png">
+填写表名和字段等信息">
+<meta name="twitter:image" content="http://o6xuqclac.bkt.clouddn.com/plsql%E6%96%B0%E5%BB%BA%E8%A1%A8%E8%8F%9C%E5%8D%95%E9%80%89%E6%8B%A9.png">
 
 
 
@@ -163,7 +147,7 @@ g">
   };
 </script>
 
-  <title> GitHub教程(1)-陈骁 | 融易通-华兴项目组-博客 </title>
+  <title> oracle基础语法-朱涛 | 融易通-华兴项目组-博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -313,7 +297,7 @@ g">
             
             
               
-                GitHub教程(1)-陈骁
+                oracle基础语法-朱涛
               
             
           </h1>
@@ -325,8 +309,8 @@ g">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-29T16:52:35+08:00" content="2016-04-29">
-              2016-04-29
+            <time itemprop="dateCreated" datetime="2016-05-18T11:42:30+08:00" content="2016-05-18">
+              2016-05-18
             </time>
           </span>
 
@@ -339,8 +323,8 @@ g">
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index">
-                    <span itemprop="name">git</span>
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
                   </a>
                 </span>
 
@@ -355,8 +339,8 @@ g">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/29/GitHub教程-1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/29/GitHub教程-1/" itemprop="commentsCount"></span>
+                <a href="/2016/05/18/oracle基础语法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/18/oracle基础语法/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -366,7 +350,7 @@ g">
 
           
           
-             <span id="/2016/04/29/GitHub教程-1/" class="leancloud_visitors" data-flag-title="GitHub教程(1)-陈骁">
+             <span id="/2016/05/18/oracle基础语法/" class="leancloud_visitors" data-flag-title="oracle基础语法-朱涛">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -388,53 +372,30 @@ g">
       
 
       
-        <p>GitHub教程(1)</p>
-<p>对于从事IT行业的人员来说，GitHub很多人应该都听说过这个名字，但是可能也有一些人不是很清楚Github到底是什么？</p>
-<h2 id="代码管理工具有哪些？"><a href="#代码管理工具有哪些？" class="headerlink" title="代码管理工具有哪些？"></a>代码管理工具有哪些？</h2><ul>
-<li>SVN</li>
-<li>git</li>
-<li>mercurial</li>
-</ul>
-<p>以上三个都是代码管理工具，我们平常用到的都是图形化操作界面的客户端比如</p>
-<ul>
-<li>SVN的客户端：<ul>
-<li>TortoiseSVN</li>
-<li>SmartSVN</li>
-<li>Subcommander</li>
-<li>RapidSVN</li>
-<li>QSvn</li>
-</ul>
-</li>
-<li>git的客户端：<ul>
-<li>TotoiseGit(Windows)</li>
-<li>SourceTree(Windows/OS)</li>
-<li>TortoiseGit(Windows/OS)</li>
-<li>GitUp(OS)</li>
-<li>SmartGit(Windows/OS/Linux)</li>
-<li>QGit(Windows/Linux)</li>
-<li>GitX(OS)</li>
-<li>gitnub(OS)</li>
-<li>Tower(OS)</li>
-<li>git-cola(Windows/OS/Linux)</li>
-<li>Git Extensions(Windows/Linux)</li>
-<li>GitEye(Windows/OS/Linux)</li>
-<li>GitBox(OS)</li>
-<li>Gitg(Linux)</li>
-<li>Giggle(Linux)</li>
-</ul>
-</li>
-<li>mercurial的客户端：<ul>
-<li>TortoiseHG</li>
-<li>SourceTree</li>
-</ul>
-</li>
-</ul>
-<h2 id="为什么是github"><a href="#为什么是github" class="headerlink" title="为什么是github"></a>为什么是github</h2><p>从git使用的客户端工具，可以看出目前主流代码管理使用的是git</p>
-<p><img src="http://7xth9f.com2.z0.glb.clouddn.com/2016-04-28/Snip20160428_3.png" alt=""></p>
-<p>对应的svn，git，mercurial都需要一个代码服务器，而github就是一个基于git的代码托管平台，不过这上面的绝大部分代码都是公开的，要建立私人的代码仓库就需要付费了。</p>
-<p><img src="http://7xth9f.com2.z0.glb.clouddn.com/2016-04-28/Snip20160428_2.png" alt=""></p>
-<p>上图给出的是github用户以及仓库数量从08年到12的膨胀速度.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getsubset</span><span class="params">(myset,subtract)</span>:</span></span><br><span class="line">  <span class="keyword">if</span> len(myset)&lt;=<span class="number">1</span>:</span><br><span class="line">    <span class="keyword">return</span> []</span><br><span class="line">  result=[]</span><br><span class="line">  newsubtract=subtract.copy()</span><br><span class="line">  <span class="keyword">for</span> i <span class="keyword">in</span> subtract:</span><br><span class="line">    result.append(myset-&#123;i&#125;)</span><br><span class="line">    newsubtract=newsubtract-&#123;i&#125;</span><br><span class="line">    result.extend(getsubset(myset-&#123;i&#125;,newsubtract))</span><br><span class="line">  <span class="keyword">return</span> result</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">subset</span><span class="params">(myset)</span>:</span></span><br><span class="line">  result=[set(),myset] <span class="keyword">if</span> myset <span class="keyword">else</span> [myset]</span><br><span class="line">  result.extend(getsubset(myset,myset))</span><br><span class="line">  <span class="keyword">return</span> result</span><br><span class="line">result=subset(&#123;<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>&#125;)</span><br><span class="line">toprint=[sorted(x) <span class="keyword">for</span> x <span class="keyword">in</span> result]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> sorted(toprint,key=<span class="keyword">lambda</span> x:(len(x),x)):</span><br><span class="line">  print(i)</span><br></pre></td></tr></table></figure>
+        <h1 id="Oracle基础语法"><a href="#Oracle基础语法" class="headerlink" title="Oracle基础语法"></a>Oracle基础语法</h1><blockquote>
+<p>1、表的新建和删除</p>
+<p>2、基础数据查询</p>
+<p>3、数据新增</p>
+</blockquote>
+<h3 id="表的新建和删除"><a href="#表的新建和删除" class="headerlink" title="表的新建和删除"></a>表的新建和删除</h3><h4 id="新建表"><a href="#新建表" class="headerlink" title="新建表"></a>新建表</h4><p>方法一：使用sql语句新建表；</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> 表名</span><br><span class="line">(</span><br><span class="line">字段 类型</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>根据不同字段的需要设置不同类型（int、varchar、date…）</p>
+<p>方法二：使用pl sql可视化新建表；</p>
+<p>首先需要找到plsql中右侧“对象”菜单，找到tables文件夹，右键点击“新建”；</p>
+<p><img src="http://o6xuqclac.bkt.clouddn.com/plsql%E6%96%B0%E5%BB%BA%E8%A1%A8%E8%8F%9C%E5%8D%95%E9%80%89%E6%8B%A9.png" alt=""></p>
+<p>填写表名和字段等信息</p>
+<p><img src="http://o6xuqclac.bkt.clouddn.com/plsql%E6%96%B0%E5%BB%BA%E8%A1%A8%E8%8F%9C%E5%8D%95%E5%A1%AB%E5%86%99%E8%A1%A8%E5%90%8D.png" alt=""></p>
+<p><img src="http://o6xuqclac.bkt.clouddn.com/plsql%E6%96%B0%E5%BB%BA%E5%AD%97%E6%AE%B5.png" alt=""></p>
+<p>点击“应用”按钮完成新建</p>
+<h4 id="删除表"><a href="#删除表" class="headerlink" title="删除表"></a>删除表</h4><p>方法一：使用sql语句新删除表；<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> 表名</span><br></pre></td></tr></table></figure></p>
+<p>方法二：使用pl sql可视化删除表；</p>
+<p><img src="http://o6xuqclac.bkt.clouddn.com/%E5%88%A0%E9%99%A4%E8%A1%A8.png" alt=""></p>
+<h3 id="基础数据查询"><a href="#基础数据查询" class="headerlink" title="基础数据查询"></a>基础数据查询</h3><h4 id="普通查询"><a href="#普通查询" class="headerlink" title="普通查询"></a>普通查询</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> 表名</span><br></pre></td></tr></table></figure>
+<h4 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> 表名 <span class="keyword">where</span> 字段=<span class="string">'条件'</span></span><br></pre></td></tr></table></figure>
+<h4 id="范围查询"><a href="#范围查询" class="headerlink" title="范围查询"></a>范围查询</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 字段<span class="number">1</span> <span class="keyword">from</span> 表名 <span class="keyword">where</span> 字段<span class="number">1</span> <span class="keyword">between</span> <span class="number">1000</span> <span class="keyword">and</span> <span class="number">2000</span></span><br></pre></td></tr></table></figure>
+<h4 id="查询排序"><a href="#查询排序" class="headerlink" title="查询排序"></a>查询排序</h4><p>倒序<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> *</span><br><span class="line">  <span class="keyword">from</span> 表名 t</span><br><span class="line"> <span class="keyword">where</span> t.字段 <span class="keyword">between</span> <span class="number">2000</span> <span class="keyword">and</span> <span class="number">5000</span></span><br><span class="line"> <span class="keyword">order</span> <span class="keyword">by</span> 字段 <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure></p>
+<p>正序<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> *</span><br><span class="line">  <span class="keyword">from</span> table1 t</span><br><span class="line"> <span class="keyword">where</span> t.字段 <span class="keyword">between</span> <span class="number">2000</span> <span class="keyword">and</span> <span class="number">5000</span></span><br><span class="line"> <span class="keyword">order</span> <span class="keyword">by</span> 字段 <span class="keyword">asc</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="数据新增"><a href="#数据新增" class="headerlink" title="数据新增"></a>数据新增</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> 表名 (字段<span class="number">1</span>,字段二,字段三)</span><br><span class="line"><span class="keyword">values</span> (<span class="string">'值1'</span>,<span class="string">'值2'</span>,值<span class="number">3</span><span class="string">');</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -455,9 +416,9 @@ g">
       
         <div class="post-tags">
           
-            <a href="/tags/gitHub/" rel="tag">#gitHub</a>
+            <a href="/tags/oracle/" rel="tag">#oracle</a>
           
-            <a href="/tags/陈骁/" rel="tag">#陈骁</a>
+            <a href="/tags/朱涛/" rel="tag">#朱涛</a>
           
         </div>
       
@@ -466,17 +427,13 @@ g">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/29/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2016/05/16/oracle配置/" rel="next" title="oracle配置-朱涛">
+                <i class="fa fa-chevron-left"></i> oracle配置-朱涛
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/04/oracle安装/" rel="prev" title="oracle安装-朱涛">
-                oracle安装-朱涛 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -502,8 +459,8 @@ g">
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/29/GitHub教程-1/"
-           data-title="GitHub教程(1)-陈骁" data-url="http://michealchan.github.io/2016/04/29/GitHub教程-1/">
+      <div class="ds-thread" data-thread-key="2016/05/18/oracle基础语法/"
+           data-title="oracle基础语法-朱涛" data-url="http://michealchan.github.io/2016/05/18/oracle基础语法/">
       </div>
     
   </div>
@@ -617,7 +574,7 @@ g">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码管理工具有哪些？"><span class="nav-number">1.</span> <span class="nav-text">代码管理工具有哪些？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么是github"><span class="nav-number">2.</span> <span class="nav-text">为什么是github</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Oracle基础语法"><span class="nav-number">1.</span> <span class="nav-text">Oracle基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#表的新建和删除"><span class="nav-number">1.0.1.</span> <span class="nav-text">表的新建和删除</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#新建表"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">新建表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除表"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">删除表</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基础数据查询"><span class="nav-number">1.0.2.</span> <span class="nav-text">基础数据查询</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#普通查询"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">普通查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#条件查询"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">条件查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#范围查询"><span class="nav-number">1.0.2.3.</span> <span class="nav-text">范围查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查询排序"><span class="nav-number">1.0.2.4.</span> <span class="nav-text">查询排序</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据新增"><span class="nav-number">1.0.3.</span> <span class="nav-text">数据新增</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
