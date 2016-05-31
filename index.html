@@ -261,6 +261,159 @@
             
               
                 
+                <a class="post-title-link" href="/2016/05/31/WebGL第一节/" itemprop="url">
+                  WebGL第一节-黄甲栋
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-31T16:50:35+08:00" content="2016-05-31">
+              2016-05-31
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/WebGL/" itemprop="url" rel="index">
+                    <span itemprop="name">WebGL</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/31/WebGL第一节/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/31/WebGL第一节/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/05/31/WebGL第一节/" class="leancloud_visitors" data-flag-title="WebGL第一节-黄甲栋">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="什么是WebGL"><a href="#什么是WebGL" class="headerlink" title="什么是WebGL"></a>什么是WebGL</h2><p>webgl 是一项用来在网页上绘制和渲染复杂的三维图形，并允许用户与之进行交互技术。webgl技术结合HTML5和javascript，在网页上创建和渲染三维图形。<br>webgl 是内嵌在浏览器中的，所以不必要安装插件和库，就可以使用。</p>
+<h2 id="WebGL-的优势"><a href="#WebGL-的优势" class="headerlink" title="WebGL 的优势"></a>WebGL 的优势</h2><p>开发简单：</p>
+<ul>
+<li>你只需要一个文本编辑器和一个浏览器，就可以开始编写三维图形程序了</li>
+<li>你可以使用web技术发布三维图形，展示给你朋友和其他开发者</li>
+<li>你可以充分利用浏览器功能</li>
+<li>互联网有大量现场的资料，它可以帮助你学习WebGL，编写三维程序</li>
+</ul>
+<h2 id="WebGL-程序的机构"><a href="#WebGL-程序的机构" class="headerlink" title="WebGL 程序的机构"></a>WebGL 程序的机构</h2><p>WebGL 页面包含三种语言：<br>HTML5（超文本标记语言）、Javascript、GLSL ES（着色器语言）</p>
+<blockquote>
+<p>HTML5 的canvas标签 允许JavaScript动态的绘制图形。</p>
+</blockquote>
+<p>例子1：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">hellocanvas.html:</span><br><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span> =<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>clear canvas<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">onload</span>=<span class="string">"main()"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"webgl"</span> <span class="attr">width</span>=<span class="string">"400"</span> <span class="attr">height</span>=<span class="string">"400"</span>&gt;</span></span><br><span class="line">Please use a browser that supports "canvas"</span><br><span class="line"><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>  <span class="attr">src</span>=<span class="string">"../lib/webgl-utils.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>  <span class="attr">src</span>=<span class="string">"../lib/webgl-debug.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>  <span class="attr">src</span>=<span class="string">"../lib/cuon-utils.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>  <span class="attr">src</span>=<span class="string">"HelloCanvas.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">'HelloCanvas.js</span><br><span class="line">function main()&#123;</span><br><span class="line">//获取<span class="tag">&lt;<span class="name">canvas</span> 元素&gt;</span></span><br><span class="line">var canvas = document.getElementById('webgl');</span><br><span class="line"></span><br><span class="line">//获取WebGL绘图上下文</span><br><span class="line">var gl = getWebGLContext(canvas);</span><br><span class="line">if (!gl) &#123;</span><br><span class="line">	console.log('failed to get the  rendering context for webgl ');</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br><span class="line">//指定清空<span class="tag">&lt;<span class="name">canvas</span>&gt;</span>的颜色</span><br><span class="line">gl.clearColor(0.5,0.5,0.5,1.0);</span><br><span class="line">//清空<span class="tag">&lt;<span class="name">canvas</span>&gt;</span></span><br><span class="line">gl.clear(gl.COLOR_BUFFER_BIT);</span><br><span class="line"></span><br><span class="line">&#125;'</span><br></pre></td></tr></table></figure>
+<h2 id="webgl-需要两种着色器："><a href="#webgl-需要两种着色器：" class="headerlink" title="webgl 需要两种着色器："></a>webgl 需要两种着色器：</h2><ul>
+<li>顶点着色器</li>
+<li>片元着色器<h3 id="Webgl-程序遵循的流程："><a href="#Webgl-程序遵循的流程：" class="headerlink" title="Webgl 程序遵循的流程："></a>Webgl 程序遵循的流程：</h3><blockquote>
+<p>获取canvas元素  -&gt; 获取WebGL的绘图上下文  -&gt; 初始化着色器   -&gt; 设置canvas背景颜色 -&gt; 清除canvas</p>
+</blockquote>
+</li>
+</ul>
+<p>例子：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">'helloPoint2.html</span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span> =<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Draw a point(1)<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">onload</span>=<span class="string">"main()"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"webgl"</span> <span class="attr">width</span>=<span class="string">"400"</span> <span class="attr">height</span>=<span class="string">"400"</span>&gt;</span></span><br><span class="line">Please use a browser that supports "canvas"</span><br><span class="line"><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>  <span class="attr">src</span>=<span class="string">"../lib/webgl-utils.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>  <span class="attr">src</span>=<span class="string">"../lib/webgl-debug.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>  <span class="attr">src</span>=<span class="string">"../lib/cuon-utils.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>  <span class="attr">src</span>=<span class="string">"HelloPoint2.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span>'</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">hellopoint2.js</span><br><span class="line">'//定点着色器程序 // ‘+’ 将多行字符串连成一个字符串  ‘\n’不是必须的 为了方便检测代码错误</span><br><span class="line">var VSHADER_SOURCE =</span><br><span class="line">'attribute vec4 a_Position;\n' +</span><br><span class="line">'attribute float a_PointSize;\n' +</span><br><span class="line">'void main() &#123;\n' +</span><br><span class="line">'gl_Position = a_Position;\n' + //设置坐标</span><br><span class="line">'gl_PointSize = a_PointSize;\n' +//设置尺寸</span><br><span class="line">'&#125;\n';</span><br></pre></td></tr></table></figure>
+<p>//片元着色器程序<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">var FSHADER_SOURCE = 'void main() &#123;\n' +</span><br><span class="line">'gl_FragColor = vec4(0.0,1.0,0.0,1.0);\n'+ //设置颜色</span><br><span class="line">'&#125;\n';</span><br><span class="line"> function main()&#123;</span><br><span class="line">//获取&lt;canvas 元素&gt;</span><br><span class="line">var canvas = document.getElementById('webgl');</span><br><span class="line"></span><br><span class="line">//获取WebGL绘图上下文</span><br><span class="line">var gl = getWebGLContext(canvas);</span><br><span class="line">if (!gl) &#123;</span><br><span class="line">	console.log('failed to get the  rendering context for webgl ');</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//初始化着色器  initShaders()初始化函数 是在cuon.utils.js中调用的</span><br><span class="line">if(!initShaders(gl,VSHADER_SOURCE,FSHADER_SOURCE)) &#123;</span><br><span class="line">	console.log('Faile to initialize  shaders.');</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> //获取attribute变量的存储位置</span><br><span class="line"></span><br><span class="line"> var a_Position = gl.getAttribLocation(gl.program,'a_Position');</span><br><span class="line"> var a_PointSize = gl.getAttribLocation(gl.program,'a_PointSize');</span><br><span class="line"></span><br><span class="line"> if (a_Position&lt;0) &#123;</span><br><span class="line">	console.log('Faile to get the storage location of a_Position ');</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//将顶点位置传给attribute 变量</span><br><span class="line">gl.vertexAttrib3f(a_Position,0.5,0.0,0.0);</span><br><span class="line">gl.vertexAttrib1f(a_PointSize,5.0);</span><br><span class="line"> //指定情况&lt;canvas&gt;的颜色</span><br><span class="line"> gl.clearColor(0.0,0.0,0.0,1.0);</span><br><span class="line"> //清空&lt;canvas&gt;</span><br><span class="line"> gl.clear(gl.COLOR_BUFFER_BIT);</span><br><span class="line"></span><br><span class="line"> //绘制一个点</span><br><span class="line"> gl.drawArrays(gl.POINTS,0,1);</span><br><span class="line">&#125;'</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/05/18/oracle基础语法/" itemprop="url">
                   oracle基础语法-朱涛
                 </a>
@@ -492,8 +645,7 @@
       
         
           
-            <p>#Oracle 11g在win8 64位上配置PLSql</p>
-<h3 id="插件下载"><a href="#插件下载" class="headerlink" title="插件下载"></a>插件下载</h3><blockquote>
+            <h1 id="Oracle-11g在win8-64位上配置PLSql"><a href="#Oracle-11g在win8-64位上配置PLSql" class="headerlink" title="Oracle 11g在win8 64位上配置PLSql"></a>Oracle 11g在win8 64位上配置PLSql</h1><h3 id="插件下载"><a href="#插件下载" class="headerlink" title="插件下载"></a>插件下载</h3><blockquote>
 <p>1、到oracle官网中下载instantclient_11_2文件</p>
 <p>2、下方为csdn中的下载地址，也可以到官网中下。</p>
 </blockquote>
@@ -1614,7 +1766,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1622,7 +1774,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1631,7 +1783,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
