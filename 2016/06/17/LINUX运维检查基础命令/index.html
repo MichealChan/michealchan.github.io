@@ -1,0 +1,852 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="linux,张永枫," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="融易通-华兴项目组-博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="Linux系统信息相关应用系统基本信息
+
+1.查询操作系统环境命令 uname
+示例：
+mac os123MacxdeMacBook-Pro:~ Macx$ unameDarwinMacxdeMacBook-Pro:~ Macx$
+cent os123[root@EWP5 ~]# unameLinux[root@EWP5 ~]#
+操作系统版本号
+Linux: cat /etc/centos-rel">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LINUX运维检查基础命令-张永枫">
+<meta property="og:url" content="http://michealchan.github.io/2016/06/17/LINUX运维检查基础命令/index.html">
+<meta property="og:site_name" content="融易通-华兴项目组-博客">
+<meta property="og:description" content="Linux系统信息相关应用系统基本信息
+
+1.查询操作系统环境命令 uname
+示例：
+mac os123MacxdeMacBook-Pro:~ Macx$ unameDarwinMacxdeMacBook-Pro:~ Macx$
+cent os123[root@EWP5 ~]# unameLinux[root@EWP5 ~]#
+操作系统版本号
+Linux: cat /etc/centos-rel">
+<meta property="og:updated_time" content="2016-06-20T01:20:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LINUX运维检查基础命令-张永枫">
+<meta name="twitter:description" content="Linux系统信息相关应用系统基本信息
+
+1.查询操作系统环境命令 uname
+示例：
+mac os123MacxdeMacBook-Pro:~ Macx$ unameDarwinMacxdeMacBook-Pro:~ Macx$
+cent os123[root@EWP5 ~]# unameLinux[root@EWP5 ~]#
+操作系统版本号
+Linux: cat /etc/centos-rel">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> LINUX运维检查基础命令-张永枫 | 融易通-华兴项目组-博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?038b73510694094ec4c5332a3038e631";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">融易通-华兴项目组-博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">stay hungry stay foolish</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                LINUX运维检查基础命令-张永枫
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-17T17:30:00+08:00" content="2016-06-17">
+              2016-06-17
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/17/LINUX运维检查基础命令/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/17/LINUX运维检查基础命令/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/06/17/LINUX运维检查基础命令/" class="leancloud_visitors" data-flag-title="LINUX运维检查基础命令-张永枫">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="Linux系统信息相关"><a href="#Linux系统信息相关" class="headerlink" title="Linux系统信息相关"></a>Linux系统信息相关</h4><p>应用系统基本信息</p>
+<hr>
+<h5 id="1-查询操作系统环境"><a href="#1-查询操作系统环境" class="headerlink" title="1.查询操作系统环境"></a>1.查询操作系统环境</h5><p>命令 <code>uname</code></p>
+<p>示例：</p>
+<p>mac os<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MacxdeMacBook-Pro:~ Macx$ uname</span><br><span class="line">Darwin</span><br><span class="line">MacxdeMacBook-Pro:~ Macx$</span><br></pre></td></tr></table></figure></p>
+<p>cent os<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@EWP5 ~]# uname</span><br><span class="line">Linux</span><br><span class="line">[root@EWP5 ~]#</span><br></pre></td></tr></table></figure></p>
+<p>操作系统版本号</p>
+<p>Linux:<br> cat /etc/centos-release</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@EWP5 work]# cat /etc/centos-release</span><br><span class="line">CentOS release 6.5 (Final)</span><br><span class="line">[root@EWP5 work]#</span><br></pre></td></tr></table></figure>
+<hr>
+<h5 id="2-CPU使用情况"><a href="#2-CPU使用情况" class="headerlink" title="2.CPU使用情况"></a>2.CPU使用情况</h5><p>命令 <code>top -M</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">top - 10:55:19 up 18 days, 21:39,  1 user,  load average: 0.00, 0.00, 0.00</span><br><span class="line">Tasks: 140 total,   1 running, 139 sleeping,   0 stopped,   0 zombie</span><br><span class="line">Cpu(s):  0.1%us,  0.1%sy,  0.0%ni, 99.8%id,  0.0%wa,  0.0%hi,  0.0%si,  0.0%st</span><br><span class="line">Mem:   3920700k total,  1288868k used,  2631832k free,   208296k buffers</span><br><span class="line">Swap:  4063228k total,        0k used,  4063228k free,   786884k cached</span><br><span class="line"></span><br><span class="line">  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND</span><br><span class="line"> 9044 root      20   0 15036 1232  928 R  0.3  0.0   0:00.01 top</span><br><span class="line">    1 root      20   0 19364 1540 1224 S  0.0  0.0   0:02.18 init</span><br><span class="line">    2 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kthreadd</span><br><span class="line">    3 root      RT   0     0    0    0 S  0.0  0.0   0:00.30 migration/0</span><br><span class="line">    4 root      20   0     0    0    0 S  0.0  0.0   0:01.09 ksoftirqd/0</span><br><span class="line">    5 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 stopper/0</span><br><span class="line">    6 root      RT   0     0    0    0 S  0.0  0.0   0:02.63 watchdog/0</span><br><span class="line">    7 root      RT   0     0    0    0 S  0.0  0.0   0:00.24 migration/1</span><br><span class="line">    8 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 stopper/1</span><br><span class="line">    9 root      20   0     0    0    0 S  0.0  0.0   0:01.20 ksoftirqd/1</span><br><span class="line">   10 root      RT   0     0    0    0 S  0.0  0.0   0:02.43 watchdog/1</span><br><span class="line">   11 root      RT   0     0    0    0 S  0.0  0.0   0:00.57 migration/2</span><br></pre></td></tr></table></figure></p>
+<h4 id="查看top"><a href="#查看top" class="headerlink" title="查看top"></a>查看top</h4><p>当前时间： 10:55:19</p>
+<p>系统运行时间： up 18 days,21:39</p>
+<p>当前用户数： 1 user</p>
+<p>系统负载： 1分钟、5分钟、15分钟</p>
+<h4 id="查看tasks"><a href="#查看tasks" class="headerlink" title="查看tasks"></a>查看tasks</h4><p>进程总数： 140 tatal</p>
+<p>正在运行的进程数： 1 running</p>
+<p>睡眠的进程数： 139 sleeping</p>
+<p>停止的进程数： 0 stopped</p>
+<p>僵尸进程数： 0 zombie （没有被正常销毁的进程）</p>
+<h4 id="查看Cpu-s"><a href="#查看Cpu-s" class="headerlink" title="查看Cpu(s):"></a>查看Cpu(s):</h4><p>用户空间占用比： 2.7%us</p>
+<p>系统占用比：0.7%sy</p>
+<p>内核空间占用比 0.0%ni</p>
+<p>空闲：96.6%id</p>
+<p>等待输入输出的cpu的时间百分比：0.0%</p>
+<h4 id="查看-swap"><a href="#查看-swap" class="headerlink" title="查看 swap"></a>查看 swap</h4><p>交换区总量： 4063228k tatal</p>
+<p>使用的交换区总量： 0k used</p>
+<p>空闲的交换区总量： 4063228k free</p>
+<p>缓存的交换区总量： 786884k cached</p>
+<h4 id="进程信息"><a href="#进程信息" class="headerlink" title="进程信息"></a>进程信息</h4><p>进程id： PID</p>
+<p>用户：user</p>
+<p>linux cup 信息查询<br>cat /proc/cpuinfo</p>
+<hr>
+<h5 id="3-内存使用情况"><a href="#3-内存使用情况" class="headerlink" title="3.内存使用情况"></a>3.内存使用情况</h5><p>命令 <code>top -M</code></p>
+<p>查看Mem:</p>
+<p>总内存 ：1862.871M total</p>
+<p>已使用内存：1512.988M used</p>
+<p>用作内核缓存的内存： 208296k buffers</p>
+<p>空闲占比：（总-已）/总</p>
+<p>###linux 内存信息查询</p>
+<p>cat /proc/meminfo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# cat /proc/meminfo</span><br><span class="line">MemTotal:        3920700 kB</span><br><span class="line">MemFree:         2631476 kB</span><br><span class="line">Buffers:          208316 kB</span><br><span class="line">Cached:           786896 kB</span><br><span class="line">SwapCached:            0 kB</span><br><span class="line">Active:           840924 kB</span><br><span class="line">Inactive:         262892 kB</span><br><span class="line">Active(anon):     107228 kB</span><br><span class="line">Inactive(anon):     1540 kB</span><br><span class="line">Active(file):     733696 kB</span><br><span class="line">Inactive(file):   261352 kB</span><br><span class="line">Unevictable:           0 kB</span><br><span class="line">Mlocked:               0 kB</span><br><span class="line">SwapTotal:       4063228 kB</span><br><span class="line">SwapFree:        4063228 kB</span><br><span class="line">Dirty:                 4 kB</span><br><span class="line">Writeback:             0 kB</span><br><span class="line">AnonPages:        108608 kB</span><br><span class="line">Mapped:            22032 kB</span><br><span class="line">Shmem:               176 kB</span><br><span class="line">Slab:             131660 kB</span><br><span class="line">SReclaimable:     104784 kB</span><br><span class="line">SUnreclaim:        26876 kB</span><br><span class="line">KernelStack:        1600 kB</span><br><span class="line">PageTables:         4184 kB</span><br><span class="line">NFS_Unstable:          0 kB</span><br><span class="line">Bounce:                0 kB</span><br><span class="line">WritebackTmp:          0 kB</span><br><span class="line">CommitLimit:     6023576 kB</span><br><span class="line">Committed_AS:     382956 kB</span><br><span class="line">VmallocTotal:   34359738367 kB</span><br><span class="line">VmallocUsed:      284796 kB</span><br><span class="line">VmallocChunk:   34359450332 kB</span><br><span class="line">HardwareCorrupted:     0 kB</span><br><span class="line">AnonHugePages:     61440 kB</span><br><span class="line">HugePages_Total:       0</span><br><span class="line">HugePages_Free:        0</span><br><span class="line">HugePages_Rsvd:        0</span><br><span class="line">HugePages_Surp:        0</span><br><span class="line">Hugepagesize:       2048 kB</span><br><span class="line">DirectMap4k:       10240 kB</span><br><span class="line">DirectMap2M:     4184064 kB</span><br><span class="line">[root@localhost ~]#</span><br></pre></td></tr></table></figure></p>
+<p>内存使用率：free -m<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# free -m</span><br><span class="line">             total       used       free     shared    buffers     cached</span><br><span class="line">Mem:          3828       1259       2569          0        203        768</span><br><span class="line">-/+ buffers/cache:        287       3541</span><br><span class="line">Swap:         3967          0       3967</span><br><span class="line">[root@localhost ~]#</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h5 id="4-ewp-相关进程情况"><a href="#4-ewp-相关进程情况" class="headerlink" title="4.ewp 相关进程情况"></a>4.ewp 相关进程情况</h5><p>首先Top –M查看系统总进程数</p>
+<p>查看Tasks:<br>系统进程总数:192total</p>
+<p>然后用ps命令查看ewp线程数：</p>
+<p>1,查看项目的进程ID :ps aux|grep ewp</p>
+<p>Top –Hp 13012</p>
+<p>ewp线程数：45 total</p>
+<hr>
+<h5 id="5-磁盘IO情况"><a href="#5-磁盘IO情况" class="headerlink" title="5.磁盘IO情况"></a>5.磁盘IO情况</h5><p>命令： <code>iostat</code>   用于监控系统设备的io负载<br>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@EWP5 ~]# iostat</span><br><span class="line">Linux 2.6.32-431.el6.x86_64 (EWP5.2) 	06/13/2016 	_x86_64_	(1 CPU)</span><br><span class="line"></span><br><span class="line">avg-cpu:  %user   %nice %system %iowait  %steal   %idle</span><br><span class="line">           1.59    0.00    1.34    0.30    0.00   96.77</span><br><span class="line"></span><br><span class="line">Device:            tps   Blk_read/s   Blk_wrtn/s   Blk_read   Blk_wrtn</span><br><span class="line">scd0              0.04         0.32         0.00        420          0</span><br><span class="line">sda              21.07       832.72       599.67    1089016     784234</span><br><span class="line">dm-0             29.96       806.08        39.96    1054170      52256</span><br><span class="line"></span><br><span class="line">[root@EWP5 ~]#</span><br></pre></td></tr></table></figure>
+<hr>
+<h5 id="6-存储空间"><a href="#6-存储空间" class="headerlink" title="6.存储空间"></a>6.存储空间</h5><p>命令 <code>df -h</code><br>检查磁盘空间情况<br>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# df -h</span><br><span class="line">Filesystem            Size  Used Avail Use% Mounted on</span><br><span class="line">/dev/mapper/VolGroup-lv_root</span><br><span class="line">                      4.8G  4.2G  416M  92% /</span><br><span class="line">tmpfs                 1.9G     0  1.9G   0% /dev/shm</span><br><span class="line">/dev/sda1             477M   34M  419M   8% /boot</span><br><span class="line">/dev/mapper/VolGroup-lv_home</span><br><span class="line">                      4.8G  466M  4.1G  11% /home</span><br><span class="line">/dev/mapper/VolGroup-lv_weblogic</span><br><span class="line">                       15G  2.1G   12G  15% /weblogic</span><br><span class="line">[root@localhost ~]#</span><br></pre></td></tr></table></figure>
+<hr>
+<h5 id="7-用户登陆情况"><a href="#7-用户登陆情况" class="headerlink" title="7.用户登陆情况"></a>7.用户登陆情况</h5><p>who , last</p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# who</span><br><span class="line">root     pts/0        2016-06-17 10:53 (10.1.91.210)</span><br><span class="line">[root@localhost ~]#</span><br><span class="line"></span><br><span class="line">root     pts/1        10.1.91.210      Wed Mar 23 17:39 - 18:54  (01:15)</span><br><span class="line">root     pts/0        10.1.91.210      Wed Mar 23 17:31 - 18:54  (01:22)</span><br><span class="line">root     pts/2        10.1.91.210      Wed Mar 23 16:39 - 17:03  (00:24)</span><br><span class="line">root     pts/1        10.1.91.210      Wed Mar 23 16:39 - 17:03  (00:24)</span><br><span class="line">root     pts/0        10.1.91.210      Wed Mar 23 16:39 - 17:03  (00:24)</span><br><span class="line">root     pts/2        10.1.91.210      Wed Mar 23 11:30 - 11:44  (00:13)</span><br><span class="line">root     pts/1        10.1.91.210      Wed Mar 23 11:27 - 11:44  (00:16)</span><br><span class="line">root     pts/0        10.1.91.210      Wed Mar 23 11:27 - 11:44  (00:17)</span><br><span class="line">root     pts/0        10.1.91.23       Tue Mar 22 09:20 - 09:20  (00:00)</span><br><span class="line">root     pts/2        10.1.91.210      Mon Mar 21 19:14 - 20:09  (00:55)</span><br><span class="line">root     pts/1        10.1.91.210      Mon Mar 21 19:13 - 20:09  (00:55)</span><br><span class="line">root     pts/0        10.1.91.210      Mon Mar 21 19:12 - 20:09  (00:57)</span><br><span class="line">root     pts/0        10.1.91.229      Mon Mar 21 10:24 - 14:27  (04:03)</span><br><span class="line">root     pts/2        10.1.91.210      Fri Mar 18 19:21 - 19:29  (00:08)</span><br><span class="line">root     pts/1        10.1.91.210      Fri Mar 18 19:11 - 19:29  (00:17)</span><br><span class="line">root     pts/0        10.1.91.210      Fri Mar 18 19:09 - 19:29  (00:20)</span><br><span class="line">root     pts/0        10.1.91.210      Fri Mar 18 14:16 - 17:24  (03:08)</span><br></pre></td></tr></table></figure>
+<h5 id="8-ip-地址查询"><a href="#8-ip-地址查询" class="headerlink" title="8.ip 地址查询"></a>8.ip 地址查询</h5><p>ifconfig, ip addr</p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# ifconfig</span><br><span class="line">eth0      Link encap:Ethernet  HWaddr 00:50:56:9B:7E:E8</span><br><span class="line">          inet addr:10.1.87.87  Bcast:10.1.87.255  Mask:255.255.255.0</span><br><span class="line">          inet6 addr: fe80::250:56ff:fe9b:7ee8/64 Scope:Link</span><br><span class="line">          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1</span><br><span class="line">          RX packets:13065453 errors:0 dropped:0 overruns:0 frame:0</span><br><span class="line">          TX packets:4088038 errors:0 dropped:0 overruns:0 carrier:0</span><br><span class="line">          collisions:0 txqueuelen:1000</span><br><span class="line">          RX bytes:3690878009 (3.4 GiB)  TX bytes:2979794411 (2.7 GiB)</span><br><span class="line"></span><br><span class="line">lo        Link encap:Local Loopback</span><br><span class="line">          inet addr:127.0.0.1  Mask:255.0.0.0</span><br><span class="line">          inet6 addr: ::1/128 Scope:Host</span><br><span class="line">          UP LOOPBACK RUNNING  MTU:65536  Metric:1</span><br><span class="line">          RX packets:26182 errors:0 dropped:0 overruns:0 frame:0</span><br><span class="line">          TX packets:26182 errors:0 dropped:0 overruns:0 carrier:0</span><br><span class="line">          collisions:0 txqueuelen:0</span><br><span class="line">          RX bytes:61955742 (59.0 MiB)  TX bytes:61955742 (59.0 MiB)</span><br><span class="line"></span><br><span class="line">[root@localhost ~]#</span><br><span class="line">[root@localhost ~]# ip addr</span><br><span class="line">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN</span><br><span class="line">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span><br><span class="line">    inet 127.0.0.1/8 scope host lo</span><br><span class="line">    inet6 ::1/128 scope host</span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000</span><br><span class="line">    link/ether 00:50:56:9b:7e:e8 brd ff:ff:ff:ff:ff:ff</span><br><span class="line">    inet 10.1.87.87/24 brd 10.1.87.255 scope global eth0</span><br><span class="line">    inet6 fe80::250:56ff:fe9b:7ee8/64 scope link</span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">[root@localhost ~]#</span><br></pre></td></tr></table></figure>
+<h5 id="9-网络检查"><a href="#9-网络检查" class="headerlink" title="9.网络检查"></a>9.网络检查</h5><p>netstat -na|grep 80|wc -l</p>
+<p>进程数检查：ps -ef|grep httpd</p>
+<p>查看进程与端口监听是否正常</p>
+<p>netstat  -nl|grep 7013</p>
+<p>netstat -tln 查看linux端口使用情况</p>
+<hr>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag">#linux</a>
+          
+            <a href="/tags/张永枫/" rel="tag">#张永枫</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/31/WebGL第一节/" rel="next" title="WebGL第一节-黄甲栋">
+                <i class="fa fa-chevron-left"></i> WebGL第一节-黄甲栋
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/06/17/LINUX运维检查基础命令/"
+           data-title="LINUX运维检查基础命令-张永枫" data-url="http://michealchan.github.io/2016/06/17/LINUX运维检查基础命令/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/team.png"
+               alt="小尘" />
+          <p class="site-author-name" itemprop="name">小尘</p>
+          <p class="site-description motion-element" itemprop="description">华兴团队开始驻场华兴于2015/11/02,目前已成功完成两期项目上线,团队博客主要是团队中的每人写的一些技术感悟或者生活体验.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/michealchan" target="_blank" title="github">
+                  
+                  github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:chen.xiao@rytong.com" target="_blank" title="邮箱">
+                  
+                  邮箱
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Linux系统信息相关"><span class="nav-number">1.</span> <span class="nav-text">Linux系统信息相关</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-查询操作系统环境"><span class="nav-number">1.1.</span> <span class="nav-text">1.查询操作系统环境</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-CPU使用情况"><span class="nav-number">1.2.</span> <span class="nav-text">2.CPU使用情况</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看top"><span class="nav-number">2.</span> <span class="nav-text">查看top</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看tasks"><span class="nav-number">3.</span> <span class="nav-text">查看tasks</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看Cpu-s"><span class="nav-number">4.</span> <span class="nav-text">查看Cpu(s):</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看-swap"><span class="nav-number">5.</span> <span class="nav-text">查看 swap</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进程信息"><span class="nav-number">6.</span> <span class="nav-text">进程信息</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#3-内存使用情况"><span class="nav-number">6.1.</span> <span class="nav-text">3.内存使用情况</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-ewp-相关进程情况"><span class="nav-number">6.2.</span> <span class="nav-text">4.ewp 相关进程情况</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-磁盘IO情况"><span class="nav-number">6.3.</span> <span class="nav-text">5.磁盘IO情况</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-存储空间"><span class="nav-number">6.4.</span> <span class="nav-text">6.存储空间</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-用户登陆情况"><span class="nav-number">6.5.</span> <span class="nav-text">7.用户登陆情况</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-ip-地址查询"><span class="nav-number">6.6.</span> <span class="nav-text">8.ip 地址查询</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#9-网络检查"><span class="nav-number">6.7.</span> <span class="nav-text">9.网络检查</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">小尘</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"michealchan"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("0jg49PpjA2UH9GwnumPDHJHr-gzGzoHsz", "yQsEOIdEufehqxfrixgBNz4Q");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>
